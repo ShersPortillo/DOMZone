@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Memes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- SECCIÓN 1: ENCABEZADO -->
+    <header class="header">
+        <div class="navbar-flex">
+            <div class="navbar-logo">
+                <img src="../../Asset/logo.jpg" alt="Logo" class="header-logo" style="height:48px;width:auto;">
+            </div>
+            <div class="navbar-title">
+                <h1 class="main-title" style="margin:0;">Generador de Memes</h1>
+            </div>
+            <div class="navbar-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='../../index.html'">Volver al Home</button>
+                <label class="theme-switch" title="Cambiar tema">
+                    <input type="checkbox" id="themeToggle" aria-label="Cambiar tema claro/oscuro">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN 2: CONTENIDO PRINCIPAL -->
+    <main class="main-content" id="creator">
+        <div class="container">
+            <div class="creator-section">
+                <h2>Crear tu Meme</h2>
+                
+                <!-- Controles de creación -->
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="imageSelect">Selecciona una imagen:</label>
+                        <select id="imageSelect" class="image-selector">
+                            <option value="https://i.imgflip.com/1bij.jpg">Distracted Boyfriend</option>
+                            <option value="https://i.imgflip.com/30b1gx.jpg">Drake Pointing</option>
+                            <option value="https://i.imgflip.com/1g8my4.jpg">Expanding Brain</option>
+                            <option value="https://i.imgflip.com/26am.jpg">Surprised Pikachu</option>
+                            <option value="https://i.imgflip.com/1bhk.jpg">Success Kid</option>
+                            <option value="https://i.imgflip.com/345v97.jpg">Woman Yelling at Cat</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="topText">Texto superior:</label>
+                        <input type="text" id="topText" placeholder="Escribe el texto superior..." maxlength="50">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="bottomText">Texto inferior:</label>
+                        <input type="text" id="bottomText" placeholder="Escribe el texto inferior..." maxlength="50">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="fontColor">Color del texto:</label>
+                        <input type="color" id="fontColor" value="#ffffff">
+                    </div>
+
+                    <div class="button-group">
+                        <button id="generateBtn" class="btn btn-primary">Generar Meme</button>
+                        <button id="randomBtn" class="btn btn-secondary">Meme Aleatorio</button>
+                        <button id="clearBtn" class="btn btn-danger">Limpiar Todo</button>
+                    </div>
+                </div>
+
+                <!-- Canvas del meme -->
+                <div class="meme-container">
+                    <canvas id="memeCanvas" width="500" height="500"></canvas>
+                    <div id="downloadSection" class="download-section" style="display: none;">
+                        <button id="downloadBtn" class="btn btn-success">Descargar Meme</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería de memes creados -->
+            <div class="gallery-section" id="gallery">
+                <h2>Tus Memes Creados</h2>
+                <div id="memeGallery" class="meme-gallery">
+                    <p class="empty-gallery">¡Crea tu primer meme para verlo aquí!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN 3: PIE DE PÁGINA -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Acerca del Generador de Memes</h3>
+                <p>Una herramienta simple y divertida para crear memes personalizados. Perfecto para expresar tu creatividad y humor.</p>
+                
+                <div class="footer-links">
+                    <h4>Enlaces útiles:</h4>
+                    <ul>
+                        <li><a href="#" onclick="showTips()">Consejos para memes</a></li>
+                        <li><a href="#" onclick="showStats()">Estadísticas</a></li>
+                    </ul>
+                </div>
+
+                <div class="stats" id="stats">
+                    <p>Memes creados: <span id="memeCount">0</span></p>
+                    <p>Última creación: <span id="lastCreated">Nunca</span></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Generador de Memes</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
