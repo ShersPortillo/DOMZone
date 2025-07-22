@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Cinzel', serif;
+
+}
+:root {
+    --principal: #6c5ce7;
+    --secondary: #a29bfe;
+    --rosado: #fd79a8;
+    --oscuro: #2d3436;
+    --claro: #f5f6fa;
+    --gradint-principal: linear-gradient(135deg, #1e00ff, #a29bfe);
+    --header-dark-bg: linear-gradient(135deg, var(--oscuro), #434c5e);
+}
+html{
+    font-size: 62.5%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body { 
+    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    background: var(--gradint-principal);
+    z-index: 1000; /*Para que los emojis no pasen por encima del header*/
+}
+
+header .logo-container{
+    width: 160px;
+}
+
+header .logo-container img{
+    width: 100%;
+}
+/* Estilos del contenido principal */
+.red-cursor{
+    cursor: url('../EmojiRainGenerator/assets/net.png')37 32, auto; /*para mas precision a la hora de atrapar emojis*/
+}
+
+main {
+  min-height: 100vh;
+  padding: 12rem 2% 2rem;
+  background: var(--claro);
+}
+
+main .btn-container{
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ 
+}
+
+main .btn-container .title:nth-child(1){
+    display: flex;
+}
+
+main .btn-container .title h3{
+    color: var(--oscuro);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main .btn-container h3{
+    font-size: 3.1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/*Estilos del boton ************************************/
+main .btn-container .btn-lluvia{
+    background-color: #6c5ce7;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 10px;
+  
+}
+main .btn-container .btn-lluvia:hover{
+    background: var(--gradint-principal);
+}
+
+main .emoji-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1; /*menor que el header*/
+}
+
+.emoji{
+    position: absolute;
+    font-size: 30px;
+    animation: caer 3s linear forwards;
+    pointer-events: auto;
+
+}
+
+@keyframes caer {
+    0%{
+        top: -50px;
+        
+    }
+    100%{
+        top: 100vh;
+        
+    }
+}
+
+@media (max-width: 768px){
+
+    main .btn-container .title h3{
+        font-size: 2.1rem;
+        margin: 0 0 0 10px;
+    }
+}
+
+@media (max-width: 512px){
+  main .btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   main .btn-container .title h3{
+        margin-top: 10px;
+        font-size: 1.7rem;
+    }
+}
