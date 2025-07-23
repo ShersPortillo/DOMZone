@@ -7,9 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="../EmojiRainGenerator/assets/logo.png" alt="">
+    <header class="header">
+        <div class="navbar-flex">
+            <div class="navbar-logo">
+                <img src="../EmojiRainGenerator/assets/logo.png" alt="Logo" class="header-logo" style="height:48px;width:auto;">
+            </div>
+           
+            <div class="navbar-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='../../index.html'">Volver al Home</button>
+                <label class="theme-switch" title="Cambiar tema">
+                    <input type="checkbox" id="themeToggle" aria-label="Cambiar tema claro/oscuro">
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
     </header>
     <main>

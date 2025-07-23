@@ -29,24 +29,118 @@ body {
     margin: 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 0;
+    overflow: hidden;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    align-items: center;
+
+/************************************
+ * HEADER Y NAVBAR                 *
+ ***********************************/
+.header {
+    position: sticky;
     background: var(--gradint-principal);
-    z-index: 1000; /*Para que los emojis no pasen por encima del header*/
+    border-bottom: 2px solid #667eea33;
+    padding: 1.2rem 0 1rem 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 24px 0 rgba(102, 126, 234, 0.10);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    transition: background 0.3s;
 }
 
-header .logo-container{
-    width: 160px;
+.navbar-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.5rem 1.5rem;
 }
 
-header .logo-container img{
-    width: 100%;
+.navbar-logo {
+    align-items: center;
+    border-radius: 10px;
+    padding: 2px 8px;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.10);
+    transition: background 0.3s;
+}
+
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-actions .btn {
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--principal) 10%, var(--rosado) 90%);
+    color: var(--oscuro);
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 2px 8px 0 rgba(102, 126, 234, 0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.navbar-actions .btn:hover {
+    background: linear-gradient(90deg, var(--rosado) 60%, var(--principal) 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px 0 rgba(102, 126, 234, 0.18);
+}
+
+.theme-switch {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 1rem;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    height: 32px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    width: 48px;
+    height: 28px;
+    background: #e1e5e9;
+    border-radius: 34px;
+    transition: background 0.3s;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.10);
+    display: flex;
+    align-items: center;
+}
+
+.slider:before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--oscuro) 60%, var(--secondary) 100%);
+    border-radius: 50%;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.theme-switch input:checked+.slider {
+    background: #232946;
+}
+
+.theme-switch input:checked+.slider:before {
+    transform: translateX(20px);
+    background: linear-gradient(135deg, var(--secondary) 60%, var(--principal) 100%);
 }
 /* Estilos del contenido principal */
 .red-cursor{
@@ -55,7 +149,7 @@ header .logo-container img{
 
 main {
   min-height: 100vh;
-  padding: 12rem 2% 2rem;
+  padding: 4rem 2% 2rem;
   background: var(--claro);
 }
 
@@ -132,6 +226,23 @@ main .emoji-container{
         margin: 0 0 0 10px;
     }
 }
+@media (max-width: 685px){
+   .navbar-actions .btn {
+        width: 20vw;
+        height: 8vh;
+        font-size: 1.5rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 20px;
+        background: linear-gradient(90deg, var(--principal) 10%, var(--rosado) 90%);
+        color: var(--oscuro);
+        border: none;
+        font-weight: 700;
+        box-shadow: 0 2px 8px 0 rgba(102, 126, 234, 0.10);
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+    
+}
 
 @media (max-width: 512px){
   main .btn-container{
@@ -142,5 +253,21 @@ main .emoji-container{
    main .btn-container .title h3{
         margin-top: 10px;
         font-size: 1.7rem;
+    }
+}
+@media (max-width: 440px){
+  .navbar-actions .btn {
+        width: 30vw;
+        height: 4vh;
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 20px;
+        background: linear-gradient(90deg, var(--principal) 10%, var(--rosado) 90%);
+        color: var(--oscuro);
+        border: none;
+        font-weight: 700;
+        box-shadow: 0 2px 8px 0 rgba(102, 126, 234, 0.10);
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        cursor: pointer;
     }
 }
