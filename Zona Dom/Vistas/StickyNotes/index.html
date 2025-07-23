@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sticky Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header con logo -->
+  <header>
+    <img src="../../Asset/logo.jpg" class="header-logo" alt="Logo" />
+    <h1 class="header-title">Creatividad de los Programadores</h1>
+    <button class="theme-toggle" onclick="toggleDarkMode()">Modo Oscuro</button>
+  </header>
+
+  <!-- App -->
+  <div class="app">
+    <h1>Sticky Notes 🎨</h1>
+    <form id="noteForm">
+      <textarea id="noteInput" placeholder="Escribe tu nota..."></textarea>
+      <button type="submit">Agregar Nota</button>
+    </form>
+    <div id="notesContainer" class="notes-container"></div>
+    <div id="notification" class="notification hidden"></div>
+  </div>
+
+  <footer class="programmers-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <p class="footer-text">Página interactiva hecha por programadores</p>
+      </div>
+      <div class="github-links">
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+  <!-- Modal de edición -->
+<div id="editModal" class="modal hidden">
+  <div class="modal-content">
+    <textarea id="editTextarea"></textarea>
+    <div class="modal-buttons">
+      <button id="saveEdit">Guardar</button>
+      <button id="cancelEdit">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

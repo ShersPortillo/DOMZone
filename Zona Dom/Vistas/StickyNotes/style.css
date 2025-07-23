@@ -1,0 +1,249 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fefefe;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+  height: 80px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #5848e0;
+}
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.note {
+  padding: 10px;
+  border-radius: 10px;
+  color: #333;
+  position: relative;
+  min-height: 100px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.note .actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 5px;
+}
+
+.note {
+  padding: 15px;
+  border-radius: 8px;
+  min-height: 100px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  position: relative;
+  font-size: 0.95rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+  transition: transform 0.2s ease;
+  background-image: linear-gradient(135deg, #fffefa 0%, #fdf6d0 100%);
+}
+
+.note:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #6c63ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bg-yellow { background-color: #fff9b1; }
+.bg-pink { background-color: #ffc9de; }
+.bg-green { background-color: #b5ead7; }
+.bg-blue { background-color: #c1d3fe; }
+.bg-orange { background-color: #ffd8a9; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-logo {
+  height: 50px;
+  width: auto;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  color: #333;
+  flex: 1;
+  text-align: center;
+}
+
+.theme-toggle {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.programmers-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-text {
+  color: #555;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+.dark-mode .app {
+  background-color: #2c2c2c;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode h1,
+.dark-mode .header-title,
+.dark-mode .footer-text {
+  color: #eee;
+}
+
+.dark-mode textarea,
+.dark-mode button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.dark-mode .note {
+  background-image: none;
+  background-color: #333;
+  color: #eee;
+}
+
+.dark-mode .notification {
+  background-color: #444;
+}
+
+.dark-mode header,
+.dark-mode .programmers-footer {
+  background-color: #2c2c2c;
+  border-color: #444;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff9b1;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  resize: none;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dark-mode .modal-content {
+  background-color: #333;
+  color: #fff;
+}
+
+.hidden {
+  display: none !important;
+}
+
