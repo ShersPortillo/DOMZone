@@ -19,6 +19,7 @@
     --claro: #f5f6fa;
     --gradint-principal: linear-gradient(135deg, #1e00ff, #a29bfe);
     --header-dark-bg: linear-gradient(135deg, var(--oscuro), #434c5e);
+    --main-dark-bg: linear-gradient(135deg, #4c566a, #81a1c1);
 }
 html{
     font-size: 62.5%;
@@ -65,6 +66,9 @@ body {
     transition: background 0.3s;
 }
 
+.navbar-logo .header-logo{
+    width: 10vw;
+}
 
 .navbar-actions {
     display: flex;
@@ -142,6 +146,28 @@ body {
     transform: translateX(20px);
     background: linear-gradient(135deg, var(--secondary) 60%, var(--principal) 100%);
 }
+/* --- DARK THEME NAVBAR --- -----------------------------------------------------------------------------------*/
+.header .navbar-flex .navbar-logo .oculto {
+ display: none;
+}
+body.dark-theme main {
+ background: var(--main-dark-bg);
+ color: var(--claro);
+}
+body.dark-theme .header .navbar-flex .navbar-logo .header-logo {
+ display: none;
+}
+body.dark-theme .header .navbar-flex .navbar-logo .oculto {
+ display: block;
+}
+body.dark-theme .header{
+    background: var(--header-dark-bg);
+    color: var(--claro);
+}
+body.dark-theme main .btn-container .title h3{
+    color: var(--claro);
+}
+
 /* Estilos del contenido principal */
 .red-cursor{
     cursor: url('../EmojiRainGenerator/assets/net.png')37 32, auto; /*para mas precision a la hora de atrapar emojis*/
@@ -220,13 +246,18 @@ main .emoji-container{
 }
 
 @media (max-width: 768px){
-
+   .navbar-logo .header-logo{
+     width: 20vw;
+    }
     main .btn-container .title h3{
         font-size: 2.1rem;
         margin: 0 0 0 10px;
     }
 }
 @media (max-width: 685px){
+    .navbar-logo .header-logo{
+        width: 20vw;
+    }
    .navbar-actions .btn {
         width: 20vw;
         height: 8vh;
@@ -245,6 +276,9 @@ main .emoji-container{
 }
 
 @media (max-width: 512px){
+    .navbar-logo .header-logo{
+        width: 20vw;
+    }
   main .btn-container{
     display: flex;
     flex-direction: column;
@@ -256,6 +290,9 @@ main .emoji-container{
     }
 }
 @media (max-width: 440px){
+    .navbar-logo .header-logo{
+        width: 30vw;
+    }
   .navbar-actions .btn {
         width: 30vw;
         height: 4vh;

@@ -62,8 +62,18 @@ function crearEmoji(){
 /**
  * Cambia el tema de la página (claro/oscuro) y aplica efectos visuales.
  */
+//declaracion global
+let isDarkTheme = false;
+
+const body = document.body;
+const buttons = document.getElementsByTagName('button');
+const themeToggle = document.getElementById('themeToggle');
+
+//Agregamos un eventlistener al checkbox
+themeToggle.addEventListener('change', changeTheme);
+
 function changeTheme() {
-    isDarkTheme = !isDarkTheme;
+    isDarkTheme = themeToggle.checked; //true si esta activo
 
     // MANIPULACIÓN DOM: Toggle clase del tema oscuro
     if (isDarkTheme) {
@@ -89,6 +99,7 @@ function changeTheme() {
     // MANIPULACIÓN DOM: Efecto de transición suave
     body.style.transition = 'all 0.5s ease';
 }
+
 
 //CUANTOS ACCIONES DE MANIPULACION DEL DOM HICE ?
 //en total 8 acciones las cuales son:
