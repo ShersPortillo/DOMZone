@@ -1,0 +1,105 @@
+.juego-reaction .encabezado {
+    text-align: center;
+    font-weight: 700;
+    padding: 0rem 5rem;
+}
+
+.juego-reaction .encabezado h3 {
+    font-size: 2rem;
+}
+
+.juego-reaction .encabezado .info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.juego-reaction .encabezado .info button {
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+    background-color: #3b2cad;
+    box-shadow: 0.25rem 0.25rem 0.25rem #5c4cd7;
+}
+
+/* Estilos para el panel */
+#panel {
+    margin-top: 20px;
+    height: 400px;
+    border: 2px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+/* Estilo para los insectos */
+.insecto {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: #ff8000e4;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    user-select: none;
+    font-size: 24px;
+}
+
+/* === RESPONSIVIDAD === */
+@media (max-width: 768px) {
+    .juego-reaction .encabezado {
+        padding: 0rem 2rem;
+    }
+
+    .juego-reaction .encabezado h3 {
+        font-size: 1.5rem;
+    }
+
+    .juego-reaction .encabezado .info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .juego-reaction .encabezado .info button {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    #panel {
+        height: 300px;
+    }
+
+    .insecto {
+        width: 3rem;
+        height: 3rem;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .juego-reaction .encabezado {
+        padding: 0rem 1rem;
+    }
+
+    .juego-reaction .encabezado h3 {
+        font-size: 1.2rem;
+    }
+
+    #panel {
+        height: 250px;
+    }
+
+    .insecto {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 16px;
+    }
+}
