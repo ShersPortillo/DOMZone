@@ -59,6 +59,36 @@ function crearEmoji(){
         emoji.remove();
     });
 } 
+/**
+ * Cambia el tema de la página (claro/oscuro) y aplica efectos visuales.
+ */
+function changeTheme() {
+    isDarkTheme = !isDarkTheme;
+
+    // MANIPULACIÓN DOM: Toggle clase del tema oscuro
+    if (isDarkTheme) {
+        body.classList.add('dark-theme');
+
+        // Se itera sobre la HTMLCollection de botones para aplicar un filtro.
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].style.filter = 'brightness(1.2)';
+        }
+
+
+    } else {
+        body.classList.remove('dark-theme');
+
+        // Se restaura el estilo original de los botones.
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].style.filter = 'none';
+        }
+
+
+    }
+
+    // MANIPULACIÓN DOM: Efecto de transición suave
+    body.style.transition = 'all 0.5s ease';
+}
 
 //CUANTOS ACCIONES DE MANIPULACION DEL DOM HICE ?
 //en total 8 acciones las cuales son:
