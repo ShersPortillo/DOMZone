@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Rain Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navbar-flex">
+            <div class="navbar-logo">
+                <img src="../EmojiRainGenerator/assets/logo.png" alt="Logo" class="header-logo">
+                <img src="../EmojiRainGenerator/assets/logodark.png" alt="Logo" class="header-logo oculto">
+            </div>
+           
+            <div class="navbar-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='../../index.html'">Volver al Home</button>
+                <label class="theme-switch" title="Cambiar tema">
+                    <input type="checkbox" id="themeToggle" aria-label="Cambiar tema claro/oscuro">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="emoji-container"></div>
+
+        <div class="btn-container">
+          
+            <div class="title">
+                <button class="btn-lluvia">🌧🌧 Comenzar lluvia de emojis</button>
+                
+            </div>
+
+            <div class="title"> 
+               <h3 id="resultado">Atrapa todos los emojis que puedas 😎</h3>
+            </div>
+            <div class="title"> 
+               <!-- para rellenar -->
+            </div>
+            <div class="title"> 
+               <!-- para rellenar -->
+            </div>
+            
+        </div>
+        
+    </main>
+
+ <script src="./Emojigenerator.js"></script>   
+</body>
+</html>
